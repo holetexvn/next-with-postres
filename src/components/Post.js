@@ -4,8 +4,8 @@ import { CommentForm } from './CommentForm';
 
 export const Post = () => {
   return (
-    <div>
-      <div className='p-6 bg-white rounded mb-3 shadow'>
+    <div className="w-full">
+      {/* <div className='p-6 bg-white rounded mb-3 shadow'>
         <p className='text-2xl font-bold text-center mb-6'>Lorem Title</p>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -18,7 +18,7 @@ export const Post = () => {
           more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum.
         </p>
-      </div>
+      </div> */}
       <Comments
         comments={[
           { id: 1, name: 'Test', content: 'abcdef', createdAt: new Date() },

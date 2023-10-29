@@ -1,7 +1,13 @@
 import React from 'react';
 import { Comment } from './Comment';
+import { sql } from '@vercel/postgres';
 
-export const Comments = ({ comments = [] }) => {
+export const Comments = async () => {
+  const data = await sql`SELECT * FROM comments`;
+  const { rows: comments } = data;
+
+  console.log({comments})
+
   return (
     <div className='p-6 bg-white rounded shadow mb-3'>
       <p className='font-bold mb-3'>Comments</p>
@@ -10,7 +16,7 @@ export const Comments = ({ comments = [] }) => {
           key={comment.id}
           name={comment.name}
           content={comment.content}
-          createdAt={comment.createdAt}
+          createdAt={comment.createdat}
         />
       ))}
     </div>
